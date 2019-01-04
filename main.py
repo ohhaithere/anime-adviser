@@ -35,7 +35,6 @@ cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
 titles = frame['title']
 indices = pd.Series(frame.index, index=frame['title'])
 
-# Function that get movie recommendations based on the cosine similarity score of movie genres
 def genre_recommendations(title):
     idx = indices[title]
     sim_scores = list(enumerate(cosine_sim[idx]))
